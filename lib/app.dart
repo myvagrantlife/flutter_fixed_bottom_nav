@@ -6,10 +6,6 @@ import 'package:flutter_fixed_bottom_nav/screens/library_screen.dart';
 import 'package:flutter_fixed_bottom_nav/screens/not_found_screen.dart';
 import 'package:flutter_fixed_bottom_nav/screens/search_screen.dart';
 
-import 'package:flutter_fixed_bottom_nav/navigators/home_navigator.dart';
-import 'package:flutter_fixed_bottom_nav/navigators/library_navigator.dart';
-import 'package:flutter_fixed_bottom_nav/navigators/search_navigator.dart';
-
 class App extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
@@ -26,7 +22,6 @@ class _AppState extends State<App> {
 
   void _selectTab(TabItem tabItem) {
     if (tabItem == _currentTab) {
-      // pop to first route
       _navigatorKeys[tabItem].currentState.popUntil((route) => route.isFirst);
     } else {
       setState(() => _currentTab = tabItem);
