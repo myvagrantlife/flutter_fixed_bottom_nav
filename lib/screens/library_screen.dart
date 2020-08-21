@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_fixed_bottom_nav/screens/favorites_screen.dart';
+import 'package:flutter_fixed_bottom_nav/screens/history_screen.dart';
+
 class LibraryScreen extends StatelessWidget {
   static Route<dynamic> route() {
     return MaterialPageRoute(
@@ -15,10 +18,27 @@ class LibraryScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Library'),
       ),
-      body: Container(
-        child: Center(
-          child: Text('Library Screen'),
-        ),
+      body: ListView(
+        children: [
+          Container(
+            child: ListTile(
+              title: Text('Favorites'),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () => {
+                Navigator.of(context).push(FavoritesScreen.route()),
+              },
+            ),
+          ),
+          Container(
+            child: ListTile(
+              title: Text('History'),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () => {
+                Navigator.of(context).push(HistoryScreen.route()),
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

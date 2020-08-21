@@ -2,29 +2,25 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_fixed_bottom_nav/screens/detail_screen.dart';
 
-class CategoryScreen extends StatelessWidget {
-  static Route<dynamic> route(int id) {
+class HistoryScreen extends StatelessWidget {
+  static Route<dynamic> route() {
     return MaterialPageRoute(
       builder: (BuildContext context) {
-        return CategoryScreen(id);
+        return HistoryScreen();
       },
     );
   }
-
-  final int id;
-
-  CategoryScreen(this.id);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Category $id'),
+        title: Text('History'),
       ),
       body: Container(
         child: Center(
           child: ListView.builder(
-            itemCount: 10,
+            itemCount: 8,
             itemBuilder: (BuildContext content, int index) {
               return Container(
                 child: ListTile(
