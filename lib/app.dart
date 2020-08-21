@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_fixed_bottom_nav/widgets/bottom_navigation.dart';
 import 'package:flutter_fixed_bottom_nav/screens/home_screen.dart';
-import 'package:flutter_fixed_bottom_nav/screens/library_screen.dart';
+import 'package:flutter_fixed_bottom_nav/screens/account_screen.dart';
 import 'package:flutter_fixed_bottom_nav/screens/not_found_screen.dart';
-import 'package:flutter_fixed_bottom_nav/screens/search_screen.dart';
+import 'package:flutter_fixed_bottom_nav/screens/library_screen.dart';
 
 class App extends StatefulWidget {
   @override
@@ -16,8 +16,8 @@ class _AppState extends State<App> {
 
   Map<TabItem, GlobalKey<NavigatorState>> _navigatorKeys = {
     TabItem.home: GlobalKey<NavigatorState>(),
-    TabItem.search: GlobalKey<NavigatorState>(),
     TabItem.library: GlobalKey<NavigatorState>(),
+    TabItem.account: GlobalKey<NavigatorState>(),
   };
 
   void _selectTab(TabItem tabItem) {
@@ -45,8 +45,8 @@ class _AppState extends State<App> {
       child: Scaffold(
         body: Stack(children: <Widget>[
           _buildOffstageNavigator(TabItem.home),
-          _buildOffstageNavigator(TabItem.search),
           _buildOffstageNavigator(TabItem.library),
+          _buildOffstageNavigator(TabItem.account),
         ]),
         bottomNavigationBar: BottomNavigation(
           currentTab: _currentTab,
@@ -66,11 +66,11 @@ class _AppState extends State<App> {
             case TabItem.home:
               return HomeScreen.route();
               break;
-            case TabItem.search:
-              return SearchScreen.route();
-              break;
             case TabItem.library:
               return LibraryScreen.route();
+              break;
+            case TabItem.account:
+              return AccountScreen.route();
               break;
             default:
               return NotFoundScreen.route();

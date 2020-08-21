@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-enum TabItem { home, search, library }
+enum TabItem { home, library, account }
 
 Map<TabItem, String> tabName = {
   TabItem.home: 'home',
-  TabItem.search: 'search',
   TabItem.library: 'library',
+  TabItem.account: 'account',
 };
 
 Map<TabItem, IconData> tabIcon = {
   TabItem.home: Icons.home,
-  TabItem.search: Icons.search,
   TabItem.library: Icons.book,
+  TabItem.account: Icons.person,
 };
 
 class BottomNavigation extends StatelessWidget {
@@ -25,8 +25,8 @@ class BottomNavigation extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       items: [
         _buildItem(tabItem: TabItem.home),
-        _buildItem(tabItem: TabItem.search),
         _buildItem(tabItem: TabItem.library),
+        _buildItem(tabItem: TabItem.account),
       ],
       onTap: (index) => onSelectTab(
         TabItem.values[index],
