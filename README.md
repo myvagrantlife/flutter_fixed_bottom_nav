@@ -2,7 +2,7 @@
 
 A sample Flutter project to demonstrate fixed bottom navigation.
 
-![](demo.gif)
+<img src="demo.gif" width="350">
 
 ## Getting Started
 
