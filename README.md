@@ -2,6 +2,8 @@
 
 A sample Flutter project to demonstrate fixed bottom navigation.
 
+![](demo.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application with fixed bottom navigation.
